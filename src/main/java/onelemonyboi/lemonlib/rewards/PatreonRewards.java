@@ -54,7 +54,7 @@ public class PatreonRewards {
         Color[] transArray = {color("59D0FA"), color("F5ABBA"), color("FFFFFF"), color("F5ABBA"), color("59D0FA")};
         Color[] biArray = {color("D70071"), color("9C4E98"), color("0035AA")};
         Color[] lesbianArray = {color("D62A00"), color("FF9B56"), color("FFFFFF"), color("D461A6"), color("A40062")};
-        Color[] asexualArray = {color("000000"), color("A4A4A4"), color("FFFFFF"), color("810081")};
+        //Color[] asexualArray = {color("000000"), color("A4A4A4"), color("FFFFFF"), color("810081")};
         Color[] panArray = {color("FF1C8D"), color("FFD900"), color("1CB2FF")};
         Color[] queerArray = {color("B77EDD"), color("FFFFFF"), color("48821D")};
         Color[] nonBinaryArray = {color("FFF530"), color("FFFFFF"), color("9E58D2"), color("282828")};
@@ -76,9 +76,9 @@ public class PatreonRewards {
                 case "LesbianFlag":
                     iFormattableTextComponent = formattingSetter(name, lesbianArray);
                     break;
-                case "AsexualFlag":
-                    iFormattableTextComponent = formattingSetter(name, asexualArray);
-                    break;
+                //case "AsexualFlag":
+                //    iFormattableTextComponent = formattingSetter(name, asexualArray);
+                //    break;
                 case "PanFlag":
                     iFormattableTextComponent = formattingSetter(name, panArray);
                     break;
