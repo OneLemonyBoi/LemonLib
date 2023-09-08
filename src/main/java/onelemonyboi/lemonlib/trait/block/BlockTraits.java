@@ -1,6 +1,7 @@
 package onelemonyboi.lemonlib.trait.block;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import net.minecraft.core.BlockPos;
@@ -44,11 +45,13 @@ public class BlockTraits {
     }
 
     @Data
+    @EqualsAndHashCode(callSuper=false)
     public static class ParticlesTrait extends Trait {
         private final boolean showBreakParticles;
     }
 
     @Data
+    @EqualsAndHashCode(callSuper=false)
     public static class BlockRenderTypeTrait extends Trait {
         private final RenderShape blockRenderType;
     }

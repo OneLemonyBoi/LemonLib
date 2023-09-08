@@ -2,7 +2,7 @@ package onelemonyboi.lemonlib.gui;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -14,7 +14,7 @@ public class ItemStackButton extends ExtendedButton {
     public int yPos;
     protected final OnTooltip onTooltip;
 
-    public ItemStackButton(int xPos, int yPos, int width, int height, TextComponent displayString, OnPress handler) {
+    public ItemStackButton(int xPos, int yPos, int width, int height, Component displayString, OnPress handler) {
         super(xPos, yPos, width, height, displayString, handler);
         this.item = Items.AIR;
         this.xPos = xPos;
@@ -22,7 +22,7 @@ public class ItemStackButton extends ExtendedButton {
         this.onTooltip = (button, matrixStack, mouseX, mouseY) -> {};
     }
 
-    public ItemStackButton(int xPos, int yPos, int width, int height, TextComponent displayString, OnPress handler, Item item) {
+    public ItemStackButton(int xPos, int yPos, int width, int height, Component displayString, OnPress handler, Item item) {
         super(xPos, yPos, width, height, displayString, handler);
         this.item = item;
         this.xPos = xPos;
@@ -30,7 +30,7 @@ public class ItemStackButton extends ExtendedButton {
         this.onTooltip = (button, matrixStack, mouseX, mouseY) -> {};
     }
 
-    public ItemStackButton(int xPos, int yPos, int width, int height, TextComponent displayString, OnPress handler, Item item, OnTooltip onTooltip) {
+    public ItemStackButton(int xPos, int yPos, int width, int height, Component displayString, OnPress handler, Item item, OnTooltip onTooltip) {
         super(xPos, yPos, width, height, displayString, handler);
         this.item = item;
         this.xPos = xPos;

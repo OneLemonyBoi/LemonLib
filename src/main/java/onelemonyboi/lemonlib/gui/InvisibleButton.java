@@ -1,7 +1,7 @@
 package onelemonyboi.lemonlib.gui;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraftforge.client.gui.widget.ExtendedButton;
 
 public class InvisibleButton extends ExtendedButton {
@@ -9,14 +9,14 @@ public class InvisibleButton extends ExtendedButton {
     public int yPos;
     protected final OnTooltip onTooltip;
 
-    public InvisibleButton(int xPos, int yPos, int width, int height, TextComponent displayString, OnPress handler) {
+    public InvisibleButton(int xPos, int yPos, int width, int height, Component displayString, OnPress handler) {
         super(xPos, yPos, width, height, displayString, handler);
         this.xPos = xPos;
         this.yPos = yPos;
         this.onTooltip = (button, matrixStack, mouseX, mouseY) -> {};
     }
 
-    public InvisibleButton(int xPos, int yPos, int width, int height, TextComponent displayString, OnPress handler, OnTooltip onTooltip) {
+    public InvisibleButton(int xPos, int yPos, int width, int height, Component displayString, OnPress handler, OnTooltip onTooltip) {
         super(xPos, yPos, width, height, displayString, handler);
         this.xPos = xPos;
         this.yPos = yPos;

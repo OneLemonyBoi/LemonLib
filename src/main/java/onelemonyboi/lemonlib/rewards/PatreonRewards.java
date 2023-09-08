@@ -2,7 +2,7 @@ package onelemonyboi.lemonlib.rewards;
 
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextColor;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.fml.LogicalSide;
@@ -57,7 +57,7 @@ public class PatreonRewards {
         TextColor[] nonBinaryArray = {color("FFF530"), color("FFFFFF"), color("9E58D2"), color("282828")};
 
         String name = event.player.getGameProfile().getName();
-        MutableComponent iFormattableTextComponent = new TextComponent(name);
+        MutableComponent iFormattableTextComponent = Component.literal(name);
         String type = PatreonJSON.REWARD_MAP.getOrDefault(name, "No Value");
         if (!type.equals("No Value")) {
             switch (type) {
@@ -97,10 +97,10 @@ public class PatreonRewards {
     }
 
     public static MutableComponent formattingSetter(String name, TextColor[] colors) {
-        MutableComponent iFormattableTextComponent = new TextComponent("");
+        MutableComponent iFormattableTextComponent = Component.literal("");
         int count = 0;
         for (Character c : name.toCharArray()) {
-            MutableComponent tempFTC = new TextComponent(c.toString()).setStyle(iFormattableTextComponent.getStyle().withColor(colors[count]));
+            MutableComponent tempFTC = Component.literal(c.toString()).setStyle(iFormattableTextComponent.getStyle().withColor(colors[count]));
             iFormattableTextComponent.append(tempFTC);
             count = count == colors.length - 1 ? 0 : count + 1;
         }

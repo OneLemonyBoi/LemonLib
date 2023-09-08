@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -101,10 +102,10 @@ public class TileBase extends BlockEntity implements IHasBehaviour {
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        if (cap == CapabilityEnergy.ENERGY && behaviour.has(TileTraits.PowerTrait.class))
+        if (cap == ForgeCapabilities.ENERGY && behaviour.has(TileTraits.PowerTrait.class))
             return behaviour.getRequired(TileTraits.PowerTrait.class).getLazyEnergyStorage().cast();
 
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && behaviour.has(TileTraits.ItemTrait.class)) {
+        if (cap == ForgeCapabilities.ITEM_HANDLER && behaviour.has(TileTraits.ItemTrait.class)) {
             return behaviour.getRequired(TileTraits.ItemTrait.class).getLazyItemStackHandler().cast();
         }
         return super.getCapability(cap, side);

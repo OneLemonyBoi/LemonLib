@@ -37,7 +37,7 @@ public class PatreonJSON {
         });
     }
 
-    private static class Supporter {
+    public static class Supporter {
         public String name;
         public String color;
     }

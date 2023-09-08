@@ -1,6 +1,7 @@
 package onelemonyboi.lemonlib.trait.tile;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.SneakyThrows;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
@@ -10,6 +11,7 @@ import onelemonyboi.lemonlib.trait.Trait;
 
 public class TileTraits {
     @Data
+    @EqualsAndHashCode(callSuper=false)
     public static class PowerTrait extends Trait {
         private CustomEnergyStorage energyStorage;
         private final LazyOptional<IEnergyStorage> lazyEnergyStorage = LazyOptional.of(() -> this.energyStorage);
@@ -42,6 +44,7 @@ public class TileTraits {
     }
 
     @Data
+    @EqualsAndHashCode(callSuper=false)
     public static class ItemTrait extends Trait {
         private MUItemStackHandler itemStackHandler;
         private final LazyOptional<MUItemStackHandler> lazyItemStackHandler = LazyOptional.of(() -> this.itemStackHandler);

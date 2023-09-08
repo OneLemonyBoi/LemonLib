@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.phys.HitResult;
-import net.minecraftforge.client.IBlockRenderProperties;
+import net.minecraftforge.client.extensions.common.IClientBlockExtensions;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import onelemonyboi.lemonlib.trait.IHasProperty;
 import onelemonyboi.lemonlib.trait.behaviour.Behaviour;
@@ -57,8 +57,8 @@ public class BlockBase extends Block implements IHasBehaviour, EntityBlock {
     }
 
     @Override
-    public void initializeClient(Consumer<IBlockRenderProperties> consumer) {
-        consumer.accept(new IBlockRenderProperties() {
+    public void initializeClient(Consumer<IClientBlockExtensions> consumer) {
+        consumer.accept(new IClientBlockExtensions() {
             @Override
             public boolean addHitEffects(BlockState state, Level level, HitResult target, ParticleEngine manager) {
                 return behaviour.has(ParticlesTrait.class) && !behaviour.getRequired(ParticlesTrait.class).isShowBreakParticles();

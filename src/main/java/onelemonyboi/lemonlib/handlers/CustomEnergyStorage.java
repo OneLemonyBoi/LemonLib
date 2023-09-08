@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.energy.EnergyStorage;
 import net.minecraftforge.energy.IEnergyStorage;
 
@@ -100,7 +101,7 @@ public class CustomEnergyStorage extends EnergyStorage {
     public void outputToSide(Level world, BlockPos pos, Direction side, int max) {
         BlockEntity te = world.getBlockEntity(pos.relative(side));
         if(te == null) {return;}
-        LazyOptional<IEnergyStorage> opt = te.getCapability(CapabilityEnergy.ENERGY, side.getOpposite());
+        LazyOptional<IEnergyStorage> opt = te.getCapability(ForgeCapabilities.ENERGY, side.getOpposite());
         IEnergyStorage ies = opt.orElse(null);
         if(ies == null) {return;}
 
@@ -112,7 +113,7 @@ public class CustomEnergyStorage extends EnergyStorage {
     public void inputFromSide(Level world, BlockPos pos, Direction side, int max) {
         BlockEntity te = world.getBlockEntity(pos.relative(side));
         if(te == null) {return;}
-        LazyOptional<IEnergyStorage> opt = te.getCapability(CapabilityEnergy.ENERGY, side.getOpposite());
+        LazyOptional<IEnergyStorage> opt = te.getCapability(ForgeCapabilities.ENERGY, side.getOpposite());
         IEnergyStorage ies = opt.orElse(null);
         if(ies == null) {return;}
 
